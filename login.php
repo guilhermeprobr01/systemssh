@@ -34,7 +34,7 @@ background-size: cover;
                                 <h1>Police | SSH</h1>
                             </header>
                             <main>
-                            <form  action="testLogin.php" method="POST">
+                            <form  action="testLogin.php" method="POST" enctype="multipart/form-data">
                                                 <div class="input-field">
                                                     <input type="text" name="email" placeholder="Nick" required>
                                                     <label for="Nick">

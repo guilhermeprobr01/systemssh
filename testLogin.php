@@ -1,13 +1,17 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     session_start();
     // print_r($_REQUEST);
         require_once('config.php');
+        
+       
 
         
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
+    if(!empty($_POST['email']) && !empty($_POST['senha']))
     {
         // Acessa
-        include_once('config.php');
         $email = addslashes($_POST['email']);
         $senha = addslashes($_POST['senha']);
 
@@ -22,7 +26,7 @@
       //Caso queira fazer de um jeito mais correto, não teria o campo no usuarios e a consulta ficaria assim:
       //SELECT u.*, CASE WHEN ul.id is null THEN 'Usuário ainda não liberado!'  ELSE '' END AS Mensagem FROM usuarios u LEFT JOIN usuario_liberacao ul ON ul.usuario_id = u.id  WHERE nick = '$email' AND senha='$senha' ;
         $sql = "SELECT * FROM usuarios WHERE nick = '$email' and senha = '$senha' and estado = 1";
-        var_dump($sql);
+        //var_dump($sql);
         $result = $conexao->query($sql);
 
         // print_r($sql);

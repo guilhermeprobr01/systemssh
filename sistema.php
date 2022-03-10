@@ -3,9 +3,9 @@
     
     include_once('config.php');
 
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
+    if(!isset($_SESSION['nick']) and !isset($_SESSION['senha']))
     {
-        unset($_SESSION['email']);
+        unset($_SESSION['nick']);
         unset($_SESSION['senha']);
         header('Location: login.php');
     }
@@ -96,9 +96,9 @@
                                <ul class="collapse__menu">
                                     <li class="tte">
                                         <a href="zs/policia.php" class="collapse__sublink" target="kas">Estatuto</a>
-                                        <a href="zs/hospital.html" class="collapse__sublink" target="kas">Membros</a>
-                                        <a href="zs/org.html" class="collapse__sublink" target="kas">Condulta</a>
-                                        <a href="zs/habbo.html" class="collapse__sublink" target="kas">Saber.mais</a>
+                                        <a href="zs/hospital.php" class="collapse__sublink" target="kas">Membros</a>
+                                        <a href="zs/org.html" class="collapse__sublink" target="kas">Companhias</a>
+                                        <a href="zs/habbo.html" class="collapse__sublink" target="kas">Anúncios</a>
                                         </li>
                                 </ul>
 
@@ -166,7 +166,6 @@
 				<source src="https://node-22.zeno.fm/p56794zqachvv?rj-ttl=5&amp;rj-tok=AAABfjbt7aQAVXbGx1cqY1VYSg" type="audio/mpeg">
 				Seu navegador não possui suporte ao elemento audio
 			</audio>
-
 
 
 <div class="lsd1">
